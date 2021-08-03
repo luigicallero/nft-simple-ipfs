@@ -90,3 +90,4 @@ You can check other details like name, symbol, owner, or tokenuri by entering th
 ```bash
 ```
 # nft-ipfs-simple2
+# nft-simple-ipfs
