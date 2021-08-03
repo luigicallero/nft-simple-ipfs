@@ -19,30 +19,33 @@ Start IPFS daemon, open a separate terminal/cmd window and type the following.
 ipfs daemon
 ```
 Step 3: Adding an image to IPFS. 
-Go to the first terminal window and add an image to IPFS (e.g. art.png).
+Go to the first terminal window and in the images folder, add the image to IPFS:
 ```bash
-ipfs add art.png
+cd images
+ipfs add bondimat_mainhtml.png
 ```
-Copy the hash starting from Qm and add the “https://ipfs.io/ipfs/” prefix to it; it must look something like this https://ipfs.io/ipfs/QmQEVVLJUR1WLN15S49rzDJsSP7za9DxeqpUzWuG4aondg
+Copy the hash starting from Qm (ipfs v0) and add the “https://ipfs.io/ipfs/” prefix to it:
+https://ipfs.io/ipfs/QmaHtfxCPQ95XggCJisBEStygG3oD2uDbYvkmhkqwGoDyv
 
 Step 4: Adding JSON file to IPFS
 Create a JSON file nft.json and save it in the same directory as the image. 
 JSON file format: 
 ```bash
 {
-    "name": "NFT Art",
-    "description": "This image shows the true nature of NFT.",
-    "image": "https://ipfs.io/ipfs/QmZzBdKF7sQX1Q49CQGmreuZHxt9sVB3hTc3TTXYcVZ7jC",
+    "name": "NFT Art: Bondimat",
+    "description": "This image shows one of our first Dapps.",
+    "image": "https://ipfs.io/ipfs/QmaHtfxCPQ95XggCJisBEStygG3oD2uDbYvkmhkqwGoDyv",
 }
 ```
 Now add the JSON file.
 ```bash
 ipfs add nft.json
 ```
-Copy the hash starting from Qm and add the “https://ipfs.io/ipfs/” prefix to it; it must look something like this https://ipfs.io/ipfs/QmUFbUjAifv9GwJo7ufTB5sccnrNqELhDMafoEmZdPPng7
+Copy the hash starting from Qm and add the “https://ipfs.io/ipfs/” prefix to it:
+https://ipfs.io/ipfs/QmUGhQrUAsnvJNq19ukxsvkkVaBtFS9rdi5M39Tv9Zrrqj
 Save this URL. We'll need this to mint our NFT.
 
- Creating our own token.
+Creating our own token.
 For ease and security, we’ll use the 0xcert/ethereum-erc721 contract to create our NFT. With 0xcert/ethereum-erc721, we don’t need to write the whole ERC-721 interface. Instead, we can import the library contract and use its functions.
  
 Head over to the Ethereum Remix IDE and make a new Solidity file, for example - nft.sol
@@ -89,5 +92,3 @@ You can check other details like name, symbol, owner, or tokenuri by entering th
 
 ```bash
 ```
-# nft-ipfs-simple2
-# nft-simple-ipfs
